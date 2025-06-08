@@ -29,7 +29,7 @@ namespace LanguageManagement.Infrastructure.Services
                 PropertyNameCaseInsensitive = true,
             });
 
-            return root?.Datas ?? new List<CultureData>();
+            return root?.Data ?? new List<CultureData>();
         }
 
      

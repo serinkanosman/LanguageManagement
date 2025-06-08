@@ -1,6 +1,6 @@
 ﻿using LanguageManagement.Application.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks; // Ensure this using directive is present
 
 namespace LanguageManagement.API.Controllers
 {
@@ -8,17 +8,17 @@ namespace LanguageManagement.API.Controllers
     [ApiController]
     public class LanguageController : ControllerBase
     {
-        private readonly ICultureService _cultureService;
+        private readonly ILanguageMediator _mediator;
 
-        public LanguageController(ICultureService cultureService)
+        public LanguageController(ILanguageMediator mediator)
         {
-            _cultureService = cultureService;
+            _mediator = mediator;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCultures()
         {
-            var cultures = await _cultureService.GetCulturesAsync();
+            var cultures = await _mediator.GetCulturesAsync();
             return Ok(cultures);
         }
     }
