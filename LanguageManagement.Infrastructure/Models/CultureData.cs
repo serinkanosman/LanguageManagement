@@ -2,7 +2,7 @@
 
 public class CultureData
 {
-    public string Id { get; set; }
+    public string? Id { get; set; } // Made Id nullable
     public string? Name { get; set; }
     public string? CultureCode { get; set; }
 

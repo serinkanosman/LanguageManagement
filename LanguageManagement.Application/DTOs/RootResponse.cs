@@ -1,5 +1,5 @@
 ﻿
-namespace LanguageManagement.Application.DTOs;
+namespace LanguageManagement.Application.DTOs
 {
 public class RootResponse
 {
@@ -9,3 +9,4 @@ public class RootResponse
     public List<string> Errors { get; set; } = new List<string>(); // Initialized to avoid CS8618
     public int StatusCode { get; set; }
 }
+} // Add closing brace for namespace

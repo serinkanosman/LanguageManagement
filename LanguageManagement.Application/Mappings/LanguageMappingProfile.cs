@@ -10,7 +10,7 @@ namespace LanguageManagement.Application.Mappings
         {
             CreateMap<CultureData, Language>()
            .ConstructUsing(x => new Language(
-                           x.Id,
+                           x.Id!, // Null-forgiving operator for Id
                            x.Name,
                            x.CultureCode,
                            x.ShortCode,
