@@ -6,7 +6,7 @@ using LanguageManagement.Infrastructure.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<CultureApiSettings>(builder.Configuration.GetSection("ApiSettings")); // Corrected to "ApiSettings" as per file
+builder.Services.Configure<CultureApiSettings>(builder.Configuration.GetSection("CultureApiSettings")); // Align with appsettings.json
 builder.Services.AddHttpClient<ICultureService, CultureService>();
 // builder.Services.AddScoped<ICultureService, CultureService>(); // This line is effectively covered by AddHttpClient<ICultureService, CultureService>
 
